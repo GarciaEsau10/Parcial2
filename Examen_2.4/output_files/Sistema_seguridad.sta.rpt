@@ -1,0 +1,506 @@
+Timing Analyzer report for Sistema_seguridad
+Thu Apr 10 23:19:36 2025
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'CLK'
+ 12. Hold: 'CLK'
+ 13. Setup Transfers
+ 14. Hold Transfers
+ 15. Report TCCS
+ 16. Report RSKM
+ 17. Unconstrained Paths Summary
+ 18. Clock Status Summary
+ 19. Unconstrained Input Ports
+ 20. Unconstrained Output Ports
+ 21. Unconstrained Input Ports
+ 22. Unconstrained Output Ports
+ 23. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                     ;
++-----------------------+-----------------------------------------------------+
+; Quartus Prime Version ; Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Timing Analyzer       ; Legacy Timing Analyzer                              ;
+; Revision Name         ; Sistema_seguridad                                   ;
+; Device Family         ; MAX II                                              ;
+; Device Name           ; EPM240T100C5                                        ;
+; Timing Models         ; Final                                               ;
+; Delay Model           ; Slow Model                                          ;
+; Rise/Fall Delays      ; Unavailable                                         ;
++-----------------------+-----------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 8           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                          ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; CLK        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { CLK } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+
+
++--------------------------------------------------+
+; Fmax Summary                                     ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 144.45 MHz ; 144.45 MHz      ; CLK        ;      ;
++------------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++--------------------------------+
+; Setup Summary                  ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; CLK   ; -5.923 ; -184.757      ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Hold Summary                  ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; CLK   ; 1.723 ; 0.000         ;
++-------+-------+---------------+
+
+
+--------------------
+; Recovery Summary ;
+--------------------
+No paths to report.
+
+
+-------------------
+; Removal Summary ;
+-------------------
+No paths to report.
+
+
++--------------------------------+
+; Minimum Pulse Width Summary    ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; CLK   ; -2.289 ; -2.289        ;
++-------+--------+---------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Setup: 'CLK'                                                                                                         ;
++--------+------------------+--------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node        ; To Node            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------+--------------------+--------------+-------------+--------------+------------+------------+
+; -5.923 ; bin_digits[3][1] ; match_alarm        ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.590      ;
+; -5.845 ; bin_digits[3][1] ; match_door         ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.512      ;
+; -5.823 ; bin_digits[0][1] ; match_alarm        ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.490      ;
+; -5.822 ; bin_digits[0][2] ; match_alarm        ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.489      ;
+; -5.664 ; bin_digits[2][2] ; match_alarm        ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.331      ;
+; -5.552 ; bin_digits[3][2] ; match_alarm        ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.219      ;
+; -5.509 ; bin_digits[2][1] ; match_alarm        ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.176      ;
+; -5.474 ; bin_digits[3][2] ; match_door         ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.141      ;
+; -5.468 ; bin_digits[3][0] ; match_alarm        ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.135      ;
+; -5.429 ; bin_digits[2][3] ; match_door         ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.096      ;
+; -5.299 ; bin_digits[1][0] ; match_alarm        ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.966      ;
+; -5.287 ; bin_digits[1][2] ; match_alarm        ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.954      ;
+; -5.265 ; bin_digits[2][3] ; match_alarm        ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.932      ;
+; -5.260 ; bin_digits[2][0] ; match_door         ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.927      ;
+; -5.221 ; bin_digits[1][1] ; match_alarm        ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.888      ;
+; -5.209 ; bin_digits[1][2] ; match_door         ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.876      ;
+; -5.151 ; bin_digits[0][3] ; match_alarm        ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.818      ;
+; -5.143 ; bin_digits[1][1] ; match_door         ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.810      ;
+; -5.130 ; bin_digits[0][1] ; match_door         ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.797      ;
+; -5.129 ; bin_digits[0][2] ; match_door         ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.796      ;
+; -5.096 ; bin_digits[2][0] ; match_alarm        ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.763      ;
+; -5.082 ; bin_digits[3][3] ; match_door         ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.749      ;
+; -5.075 ; count[0]         ; input_digits[2][2] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.742      ;
+; -5.075 ; count[0]         ; input_digits[2][3] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.742      ;
+; -5.075 ; count[0]         ; input_digits[2][1] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.742      ;
+; -5.075 ; count[0]         ; input_digits[2][0] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.742      ;
+; -5.005 ; count[1]         ; match_door         ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.672      ;
+; -5.004 ; count[1]         ; match_alarm        ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.671      ;
+; -4.978 ; count[2]         ; input_digits[1][1] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.645      ;
+; -4.978 ; count[2]         ; input_digits[1][0] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.645      ;
+; -4.978 ; count[2]         ; input_digits[1][3] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.645      ;
+; -4.978 ; count[2]         ; input_digits[1][2] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.645      ;
+; -4.971 ; count[2]         ; input_digits[0][2] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.638      ;
+; -4.971 ; count[2]         ; input_digits[0][1] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.638      ;
+; -4.971 ; count[2]         ; input_digits[0][0] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.638      ;
+; -4.971 ; bin_digits[2][2] ; match_door         ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.638      ;
+; -4.955 ; count[2]         ; input_digits[0][3] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.622      ;
+; -4.947 ; bin_digits[1][3] ; match_alarm        ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.614      ;
+; -4.939 ; count[2]         ; input_digits[3][1] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.606      ;
+; -4.939 ; count[2]         ; input_digits[3][3] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.606      ;
+; -4.939 ; count[2]         ; input_digits[3][2] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.606      ;
+; -4.939 ; count[2]         ; input_digits[3][0] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.606      ;
+; -4.918 ; bin_digits[3][3] ; match_alarm        ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.585      ;
+; -4.907 ; bin_digits[0][0] ; match_alarm        ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.574      ;
+; -4.826 ; bin_digits[3][0] ; match_door         ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.493      ;
+; -4.816 ; bin_digits[2][1] ; match_door         ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.483      ;
+; -4.764 ; count[2]         ; input_digits[2][2] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.431      ;
+; -4.764 ; count[2]         ; input_digits[2][3] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.431      ;
+; -4.764 ; count[2]         ; input_digits[2][1] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.431      ;
+; -4.764 ; count[2]         ; input_digits[2][0] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.431      ;
+; -4.693 ; count[2]         ; bin_digits[0][3]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.360      ;
+; -4.693 ; count[2]         ; bin_digits[0][2]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.360      ;
+; -4.693 ; count[2]         ; bin_digits[3][0]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.360      ;
+; -4.693 ; count[2]         ; bin_digits[0][1]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.360      ;
+; -4.693 ; count[2]         ; bin_digits[1][2]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.360      ;
+; -4.693 ; count[2]         ; bin_digits[0][0]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.360      ;
+; -4.693 ; count[2]         ; bin_digits[3][3]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.360      ;
+; -4.686 ; bin_digits[0][0] ; match_door         ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.353      ;
+; -4.661 ; count[2]         ; bin_digits[1][1]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.328      ;
+; -4.661 ; count[2]         ; bin_digits[3][2]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.328      ;
+; -4.661 ; count[2]         ; bin_digits[3][1]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.328      ;
+; -4.635 ; bin_digits[1][0] ; match_door         ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.302      ;
+; -4.617 ; count[2]         ; bin_digits[2][2]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.284      ;
+; -4.617 ; count[2]         ; bin_digits[2][1]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.284      ;
+; -4.617 ; count[2]         ; bin_digits[1][3]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.284      ;
+; -4.617 ; count[2]         ; bin_digits[1][0]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.284      ;
+; -4.617 ; count[2]         ; bin_digits[2][3]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.284      ;
+; -4.617 ; count[2]         ; bin_digits[2][0]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.284      ;
+; -4.613 ; count[1]         ; ALARM~reg0         ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.280      ;
+; -4.583 ; btn_last         ; input_digits[1][1] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.250      ;
+; -4.583 ; btn_last         ; input_digits[1][0] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.250      ;
+; -4.583 ; btn_last         ; input_digits[1][3] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.250      ;
+; -4.583 ; btn_last         ; input_digits[1][2] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.250      ;
+; -4.576 ; btn_last         ; input_digits[0][2] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.243      ;
+; -4.576 ; btn_last         ; input_digits[0][1] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.243      ;
+; -4.576 ; btn_last         ; input_digits[0][0] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.243      ;
+; -4.569 ; count[2]         ; match_door         ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.236      ;
+; -4.568 ; count[2]         ; match_alarm        ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.235      ;
+; -4.560 ; btn_last         ; input_digits[0][3] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.227      ;
+; -4.544 ; btn_last         ; input_digits[3][1] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.211      ;
+; -4.544 ; btn_last         ; input_digits[3][3] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.211      ;
+; -4.544 ; btn_last         ; input_digits[3][2] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.211      ;
+; -4.544 ; btn_last         ; input_digits[3][0] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.211      ;
+; -4.485 ; count[0]         ; bin_digits[0][3]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.152      ;
+; -4.485 ; count[0]         ; bin_digits[0][2]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.152      ;
+; -4.485 ; count[0]         ; bin_digits[3][0]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.152      ;
+; -4.485 ; count[0]         ; bin_digits[0][1]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.152      ;
+; -4.485 ; count[0]         ; bin_digits[1][2]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.152      ;
+; -4.485 ; count[0]         ; bin_digits[0][0]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.152      ;
+; -4.485 ; count[0]         ; bin_digits[3][3]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.152      ;
+; -4.472 ; count[1]         ; input_digits[2][2] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.139      ;
+; -4.472 ; count[1]         ; input_digits[2][3] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.139      ;
+; -4.472 ; count[1]         ; input_digits[2][1] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.139      ;
+; -4.472 ; count[1]         ; input_digits[2][0] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.139      ;
+; -4.458 ; bin_digits[0][3] ; match_door         ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.125      ;
+; -4.453 ; count[0]         ; bin_digits[1][1]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.120      ;
+; -4.453 ; count[0]         ; bin_digits[3][2]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.120      ;
+; -4.453 ; count[0]         ; bin_digits[3][1]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.120      ;
+; -4.409 ; count[0]         ; bin_digits[2][2]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.076      ;
+; -4.409 ; count[0]         ; bin_digits[2][1]   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.076      ;
++--------+------------------+--------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Hold: 'CLK'                                                                                                           ;
++-------+--------------------+--------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node          ; To Node            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------+--------------------+--------------+-------------+--------------+------------+------------+
+; 1.723 ; input_digits[2][2] ; bin_digits[2][1]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.944      ;
+; 1.728 ; input_digits[2][2] ; bin_digits[2][2]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.949      ;
+; 1.734 ; input_digits[2][2] ; bin_digits[2][0]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.955      ;
+; 1.735 ; input_digits[2][2] ; bin_digits[2][3]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.956      ;
+; 1.940 ; count[2]           ; count[2]           ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.161      ;
+; 1.954 ; input_digits[2][3] ; bin_digits[2][3]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.175      ;
+; 1.956 ; input_digits[2][3] ; bin_digits[2][0]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.177      ;
+; 1.964 ; input_digits[2][3] ; bin_digits[2][2]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.185      ;
+; 1.966 ; input_digits[2][3] ; bin_digits[2][1]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.187      ;
+; 2.080 ; btn_last           ; count[0]           ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.301      ;
+; 2.107 ; ALARM~reg0         ; ALARM~reg0         ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.328      ;
+; 2.151 ; count[0]           ; count[1]           ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.372      ;
+; 2.159 ; input_digits[2][1] ; bin_digits[2][1]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.380      ;
+; 2.163 ; input_digits[2][1] ; bin_digits[2][2]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.384      ;
+; 2.164 ; count[1]           ; count[1]           ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.385      ;
+; 2.170 ; input_digits[2][1] ; bin_digits[2][0]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.391      ;
+; 2.171 ; input_digits[2][1] ; bin_digits[2][3]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.392      ;
+; 2.184 ; count[1]           ; count[2]           ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.405      ;
+; 2.232 ; match_alarm        ; match_alarm        ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.453      ;
+; 2.295 ; input_digits[2][0] ; bin_digits[2][0]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.516      ;
+; 2.296 ; input_digits[2][0] ; bin_digits[2][3]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.517      ;
+; 2.300 ; input_digits[2][0] ; bin_digits[2][1]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.521      ;
+; 2.338 ; count[0]           ; count[0]           ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.559      ;
+; 2.557 ; count[2]           ; count[0]           ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.778      ;
+; 2.635 ; match_door         ; match_door         ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.856      ;
+; 2.654 ; btn_last           ; btn_last           ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.875      ;
+; 2.669 ; input_digits[3][0] ; bin_digits[3][1]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.890      ;
+; 2.736 ; count[0]           ; count[2]           ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.957      ;
+; 2.740 ; OPEN_DOOR~reg0     ; OPEN_DOOR~reg0     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.961      ;
+; 2.783 ; input_digits[0][0] ; bin_digits[0][1]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.004      ;
+; 2.787 ; input_digits[0][0] ; bin_digits[0][3]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.008      ;
+; 2.793 ; input_digits[0][0] ; bin_digits[0][0]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.014      ;
+; 2.815 ; input_digits[0][3] ; bin_digits[0][2]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.036      ;
+; 2.848 ; input_digits[3][1] ; bin_digits[3][2]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.069      ;
+; 2.848 ; input_digits[3][3] ; bin_digits[3][3]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.069      ;
+; 2.858 ; btn_last           ; count[1]           ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.079      ;
+; 2.859 ; input_digits[3][3] ; bin_digits[3][0]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.080      ;
+; 2.951 ; match_door         ; OPEN_DOOR~reg0     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.172      ;
+; 3.005 ; input_digits[3][2] ; bin_digits[3][0]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.226      ;
+; 3.011 ; input_digits[3][2] ; bin_digits[3][3]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.232      ;
+; 3.054 ; input_digits[3][3] ; bin_digits[3][2]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.275      ;
+; 3.056 ; input_digits[3][3] ; bin_digits[3][1]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.277      ;
+; 3.142 ; input_digits[0][1] ; bin_digits[0][2]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.363      ;
+; 3.175 ; input_digits[0][2] ; bin_digits[0][2]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.396      ;
+; 3.179 ; input_digits[3][2] ; bin_digits[3][2]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.400      ;
+; 3.181 ; input_digits[3][2] ; bin_digits[3][1]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.402      ;
+; 3.185 ; match_alarm        ; ALARM~reg0         ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.406      ;
+; 3.253 ; count[2]           ; count[1]           ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.474      ;
+; 3.278 ; input_digits[0][3] ; bin_digits[0][3]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.499      ;
+; 3.279 ; input_digits[0][3] ; bin_digits[0][1]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.500      ;
+; 3.281 ; input_digits[0][3] ; bin_digits[0][0]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.502      ;
+; 3.315 ; input_digits[3][0] ; bin_digits[3][3]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.536      ;
+; 3.322 ; input_digits[3][0] ; bin_digits[3][0]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.543      ;
+; 3.324 ; input_digits[3][1] ; bin_digits[3][0]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.545      ;
+; 3.329 ; input_digits[3][1] ; bin_digits[3][3]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.550      ;
+; 3.413 ; btn_last           ; count[2]           ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.634      ;
+; 3.420 ; input_digits[3][1] ; bin_digits[3][1]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.641      ;
+; 3.494 ; input_digits[1][3] ; bin_digits[1][2]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.715      ;
+; 3.500 ; input_digits[0][2] ; bin_digits[0][0]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.721      ;
+; 3.505 ; input_digits[0][2] ; bin_digits[0][3]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.726      ;
+; 3.506 ; input_digits[0][2] ; bin_digits[0][1]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.727      ;
+; 3.627 ; input_digits[1][0] ; bin_digits[1][1]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.848      ;
+; 3.722 ; count[0]           ; OPEN_DOOR~reg0     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.943      ;
+; 3.771 ; input_digits[1][0] ; bin_digits[1][0]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.992      ;
+; 3.780 ; input_digits[1][0] ; bin_digits[1][3]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.001      ;
+; 3.821 ; input_digits[1][1] ; bin_digits[1][3]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.042      ;
+; 3.825 ; input_digits[1][1] ; bin_digits[1][0]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.046      ;
+; 3.837 ; input_digits[1][3] ; bin_digits[1][1]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.058      ;
+; 3.902 ; input_digits[1][2] ; bin_digits[1][1]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.123      ;
+; 3.921 ; count[2]           ; OPEN_DOOR~reg0     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.142      ;
+; 3.938 ; input_digits[1][1] ; bin_digits[1][1]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.159      ;
+; 3.958 ; input_digits[1][1] ; bin_digits[1][2]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.179      ;
+; 3.983 ; input_digits[1][2] ; bin_digits[1][3]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.204      ;
+; 3.985 ; input_digits[1][2] ; bin_digits[1][0]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.206      ;
+; 3.998 ; input_digits[1][2] ; bin_digits[1][2]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.219      ;
+; 4.147 ; count[0]           ; input_digits[3][1] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.368      ;
+; 4.147 ; count[0]           ; input_digits[3][3] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.368      ;
+; 4.147 ; count[0]           ; input_digits[3][2] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.368      ;
+; 4.147 ; count[0]           ; input_digits[3][0] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.368      ;
+; 4.177 ; count[0]           ; input_digits[0][3] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.398      ;
+; 4.188 ; count[0]           ; input_digits[1][1] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.409      ;
+; 4.188 ; count[0]           ; input_digits[1][0] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.409      ;
+; 4.188 ; count[0]           ; input_digits[1][3] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.409      ;
+; 4.188 ; count[0]           ; input_digits[1][2] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.409      ;
+; 4.193 ; count[0]           ; input_digits[0][2] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.414      ;
+; 4.193 ; count[0]           ; input_digits[0][1] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.414      ;
+; 4.193 ; count[0]           ; input_digits[0][0] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.414      ;
+; 4.242 ; bin_digits[0][3]   ; match_door         ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.463      ;
+; 4.268 ; input_digits[0][1] ; bin_digits[0][0]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.489      ;
+; 4.273 ; input_digits[0][1] ; bin_digits[0][3]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.494      ;
+; 4.274 ; input_digits[0][1] ; bin_digits[0][1]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.495      ;
+; 4.343 ; bin_digits[2][0]   ; match_alarm        ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.564      ;
+; 4.357 ; count[1]           ; OPEN_DOOR~reg0     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.578      ;
+; 4.413 ; input_digits[1][3] ; bin_digits[1][3]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.634      ;
+; 4.423 ; input_digits[1][3] ; bin_digits[1][0]   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.644      ;
+; 4.424 ; count[0]           ; ALARM~reg0         ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.645      ;
+; 4.476 ; bin_digits[0][3]   ; match_alarm        ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.697      ;
+; 4.536 ; bin_digits[1][3]   ; match_alarm        ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.757      ;
+; 4.600 ; bin_digits[2][1]   ; match_door         ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.821      ;
+; 4.615 ; bin_digits[2][0]   ; match_door         ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.836      ;
++-------+--------------------+--------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; CLK        ; CLK      ; 282      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; CLK        ; CLK      ; 282      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths Summary                    ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 6     ; 6    ;
+; Unconstrained Input Port Paths  ; 76    ; 76   ;
+; Unconstrained Output Ports      ; 2     ; 2    ;
+; Unconstrained Output Port Paths ; 2     ; 2    ;
++---------------------------------+-------+------+
+
+
++-------------------------------------+
+; Clock Status Summary                ;
++--------+-------+------+-------------+
+; Target ; Clock ; Type ; Status      ;
++--------+-------+------+-------------+
+; CLK    ; CLK   ; Base ; Constrained ;
++--------+-------+------+-------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; BTN        ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RESET      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SW[0]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SW[1]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SW[2]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SW[3]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; ALARM       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; OPEN_DOOR   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; BTN        ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RESET      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SW[0]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SW[1]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SW[2]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SW[3]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; ALARM       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; OPEN_DOOR   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Timing Analyzer
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Thu Apr 10 23:19:31 2025
+Info: Command: quartus_sta Sistema_seguridad -c Sistema_seguridad
+Info: qsta_default_script.tcl version: #1
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'Sistema_seguridad.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name CLK CLK
+Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -5.923
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -5.923            -184.757 CLK 
+Info (332146): Worst-case hold slack is 1.723
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     1.723               0.000 CLK 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -2.289
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.289              -2.289 CLK 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 4673 megabytes
+    Info: Processing ended: Thu Apr 10 23:19:36 2025
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:01
+
+
