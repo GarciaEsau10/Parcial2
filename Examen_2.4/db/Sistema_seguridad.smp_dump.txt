@@ -1,0 +1,9 @@
+
+State Machine - |Sistema_seguridad|estado_actual
+Name estado_actual.AMBAS_ACCIONES estado_actual.ACTIVA_ALARMA estado_actual.ABRE_PUERTA estado_actual.VERIFICA_CODIGO estado_actual.GUARDA_DIGITO estado_actual.ESPERA_DIGITO 
+estado_actual.ESPERA_DIGITO 0 0 0 0 0 0 
+estado_actual.GUARDA_DIGITO 0 0 0 0 1 1 
+estado_actual.VERIFICA_CODIGO 0 0 0 1 0 1 
+estado_actual.ABRE_PUERTA 0 0 1 0 0 1 
+estado_actual.ACTIVA_ALARMA 0 1 0 0 0 1 
+estado_actual.AMBAS_ACCIONES 1 0 0 0 0 1 
